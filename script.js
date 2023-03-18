@@ -1,19 +1,21 @@
 function login(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    if(username.length && password.length != 0){
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
-    alert("Your details are saved.") 
+    alert("Your details are saved. Now you can use your credentials to login.")
+    }
+    else{
+        alert("User Id/Password can't be empty! Please enter your User Id/Password.");
+    }
 }
-
-    const username1=localStorage.getItem("username");
-    const password1=localStorage.getItem("password");
-
-
 var attempt = 3;
 function validate(){
 var username = document.getElementById("username").value;
 var password = document.getElementById("password").value;
+const username1=localStorage.getItem("username");
+const password1=localStorage.getItem("password");
 if(username.length && password.length != 0){
     if( username == username1 && password == password1){
 alert ("Login successfully! You are entering in CODER'S DASHBOARD");
